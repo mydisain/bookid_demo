@@ -6,9 +6,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
-    <meta name="description" content="BOOKid broneerimissüsteem-lihtne ja soodne online broneerimine.">
-    <meta name="keywords" content="online broneerimine, broneerimissüsteem, broneeri internetis, bookid">
-    <meta name="author" content="BOOKid">
+    <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="PIXINVENT">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Home - Vuexy - Bootstrap HTML admin template</title>
     <link rel="apple-touch-icon" href="{{asset('assets/backend/app-assets/images/ico/apple-icon-120.png')}}">
@@ -156,7 +156,7 @@
     <!-- END: Footer-->
 
     <script>
-        var appUrl = "https://bookid.ee/demo/public";
+        var appUrl = "https://bookid.ee/Car_washing/public";
     </script>
 
     <!-- BEGIN: Vendor JS-->
