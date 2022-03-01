@@ -15,10 +15,10 @@
         <div class="content-header-left col-md-9 col-12 mb-2">
             <div class="row breadcrumbs-top">
                 <div class="col-12">
-                    <h2 class="content-header-title float-left mb-0">Locations</h2>
+                    <h2 class="content-header-title float-left mb-0">Asukohad</h2>
                     <div class="breadcrumb-wrapper">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a>
+                            <li class="breadcrumb-item"><a href="index.html"></a>
                             </li>
                             <li class="breadcrumb-item active">locations
                             </li>
@@ -38,19 +38,19 @@
                         <div class="card-body">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="general-tab" data-toggle="tab" href="#general" aria-controls="general" role="tab" aria-selected="true">General</a>
+                                    <a class="nav-link active" id="general-tab" data-toggle="tab" href="#general" aria-controls="general" role="tab" aria-selected="true">Seaded</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="services-tab" data-toggle="tab" href="#services" aria-controls="services" role="tab" aria-selected="false">Services</a>
+                                    <a class="nav-link" id="services-tab" data-toggle="tab" href="#services" aria-controls="services" role="tab" aria-selected="false">Teenused</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="vehicles-tab" data-toggle="tab" href="#vehicles" aria-controls="services" role="tab" aria-selected="false">Vehicles</a>
+                                    <a class="nav-link" id="vehicles-tab" data-toggle="tab" href="#vehicles" aria-controls="services" role="tab" aria-selected="false">Liigid</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="pesubox-tab" data-toggle="tab" href="#pesubox" aria-controls="pesubox" role="tab" aria-selected="false">PesuBox</a>
+                                    <a class="nav-link" id="pesubox-tab" data-toggle="tab" href="#pesubox" aria-controls="pesubox" role="tab" aria-selected="false">Töötajad</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="user-tab" data-toggle="tab" href="#user" aria-controls="user" role="tab" aria-selected="false">Users</a>
+                                    <a class="nav-link" id="user-tab" data-toggle="tab" href="#user" aria-controls="user" role="tab" aria-selected="false">Kasutajad</a>
                                 </li>
                             </ul>
                             <div class="tab-content">
