@@ -2,10 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>AutogaVanni autopesulad</title>
+        <title>BOOKid-online broneerimine</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Free Website Template" name="keywords">
-        <meta content="Free Website Template" name="description">
+        <meta content="BOOKid broneerimissüsteem" name="keywords">
+        <meta content="Broneerimissüsteem" name="description">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Favicon -->
