@@ -5,14 +5,41 @@
         }
 
         .order-form #duration button.selected {
-            background-color: #0c838e;
+            background-color: #05c128;
             color: white;
         }
+
+        
+
+        .list-group .list-group-item {
+            line-height: 1.5;
+            background-color: #e2ffe8
+        }
+
+        .custom-control-label {
+            margin-bottom: 1em;
+        }
+
+        .btn-success {
+            border-color: #555 !important;
+            background-color: #fff !important;
+            color: #555 !important;
+        }
+
+        .modal .modal-header {
+            background-color: #7367f0;
+        }
+
+        .modal-title {
+            color: #fff;
+        }
+
+        
     </style>
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel18">Add New Vehicle</h4>
+                <h4 class="modal-title" id="myModalLabel18">Lisa uus broneering</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -28,19 +55,19 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 form-group">
-                            <label for="start_time">Start Time</label>
+                            <label for="start_time">Algus</label>
                             <input type="text" id="start_time" class="form-control flatpickr-date-time" placeholder="YYYY-MM-DD HH:MM" value='@if ($order != null)
                                 {{ $order->date . " " . $order->time }}
                             @endif' name="datetime" />
                         </div>
                         <div class="col-md-6 form-group">
-                            <label for="end_time">End Time</label>
+                            <label for="end_time">Lõpp</label>
                             <input type="text" id="end_time" class="form-control flatpickr-date-time" placeholder="YYYY-MM-DD HH:MM" value='@if ($order != null)
                                 {{ $end_time }}
                             @endif' name="enddatetime" disabled/>
                         </div>
                         <div class="col-md-12 form-group" id="duration">
-                            <label for="start_time">Duration</label>
+                            <label for="start_time">Kestvus</label>
                             <div class="flex">
                                 <button type="button" class="btn btn-default item @if($order != null && $order->duration == 30) selected @endif" data-value="30">0.5H</button>
                                 <button type="button" class="btn btn-default item @if($order != null && $order->duration == 60) selected @endif" data-value="60">1H</button>
@@ -54,7 +81,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="selectDefault">Vechiles</label>
+                                <label for="selectDefault">Broneeringu tüüp</label>
                                 <select class="form-control mb-1" id="icon" name="vehicle_id">
                                     @foreach ($location_vehicles as $vehicle)
                                         <option value={{ $vehicle->id }} @if ($order != null && $order->vehicle_id == $vehicle->id)
@@ -67,8 +94,8 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-6 text-center">
-                                    <button type="button" class="btn btn-round" id="services">Services</button>
-                                    <p class="text-left" style="margin-top: 10px">Selected Services</p>
+                                    <button type="button" class="btn btn-round" id="services">Teenused</button>
+                                    <p class="text-left" style="margin-top: 10px">Valitud teenused</p>
                                     <ul class='list-group text-left' style="margin-bottom: 20px" id="order_services">
                                         @if (count($order_services) > 0)
                                             @foreach ($order_services as $service)
@@ -79,8 +106,8 @@
                                 </div>
                                 
                                 <div class="col-md-6 text-center">
-                                    <button type="button" class="btn btn-round" id="pesuboxs">Pesuboxs</button>
-                                    <p class="text-left" style="margin-top: 10px">Selected Pesubox</p>
+                                    <button type="button" class="btn btn-round" id="pesuboxs">Töötaja</button>
+                                    <p class="text-left" style="margin-top: 10px">Valitud töötaja</p>
                                     <ul class='list-group text-left' style="margin-bottom: 20px">
                                         @foreach ($location_pesuboxs as $pesubox)
                                             @if ($order != null && $order->pesubox_id == $pesubox->id)
@@ -92,7 +119,7 @@
                             </div>
                         </div>
                         {{-- <div class="col-md-12">
-                            <label>Services</label>
+                            <label>Teenused</label>
                             <div class="form-group">
                                 <select class="select2 form-control" multiple="multiple" id="service_id" name="service_id[]">
                                     @foreach ($location_services as $service)
@@ -105,7 +132,7 @@
                         </div> --}}
                         {{-- <div class="col-md-12">
                             <div class="form-group">
-                                <label for="selectDefault">Pesubox</label>
+                                <label for="selectDefault">Töötaja</label>
                                 <select class="form-control mb-1" id="icon" name="pesubox_id">
                                     @foreach ($location_pesuboxs as $pesubox)
                                         <option value={{ $pesubox->id }} @if ($order != null && $order->pesubox_id == $pesubox->id)
@@ -115,6 +142,7 @@
                                 </select>
                             </div>
                         </div> --}}
+                    
                         <div class="col-md-6 form-group">
                             <label for="start_time">Nimi</label>
                             <input type="text" class="form-control" name="driver" value="@if ($order != null) {{ $order->driver }} @endif" />
@@ -124,14 +152,14 @@
                             <input type="text" class="form-control" name="email" value="@if ($order != null) {{ $order->email }} @endif" />
                         </div>
                         <div class="col-md-6 form-group">
-                            <label for="start_time">Phone</label>
+                            <label for="start_time">Telefon</label>
                             <input type="text" class="form-control" name="phone" value="@if ($order != null) {{ $order->phone }} @endif" />
                         </div>
                         <div class="col-md-6 form-group">
                             <label for="start_time">Number</label>
                             <input type="text" class="form-control" name="number" value="@if ($order != null) {{ $order->number }} @endif" />
                         </div>
-                        <div class="col-md-6 form-group">
+                        <!--<div class="col-md-6 form-group">
                             <label for="start_time">Vehicle Make</label>
                             <select class="form-control mb-1" id="mark" name="mark_id">
                                 @foreach ($location_marks as $mark)
@@ -150,19 +178,20 @@
                                     @endif >{{ $model->model }}</option>
                                 @endforeach
                             </select>
-                        </div>
+                        </div>-->
                         <div class="col-md-12 form-group">
-                            <label for="start_time">Message</label>
+                            <label for="start_time">Lisainfo</label>
                             <textarea type="text" class="form-control" name="summary">@if ($order != null) {{ $order->summary }} @endif</textarea>
                         </div>
                     </div>
+                
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="submit" class="btn btn-primary">Save</button>
+                    <button type="button" id="submit" class="btn btn-primary">Salvesta</button>
                     @if ($order != null)
-                    <button type="button" id="delete" class="btn btn-red text-white" data-id="{{ $order->id }}">Delete</button>
+                    <button type="button" id="delete" class="btn btn-red text-white" data-id="{{ $order->id }}">Kustuta</button>
                     @endif
-                    <button type="button" class="btn btn-success text-white" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success text-white" data-dismiss="modal">Tühista</button>
                 </div>
             </form>
         </div>
@@ -171,7 +200,7 @@
         <div class="modal-dialog modal-dialog-centered modal-md" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Select Services</h4>
+                    <h4 class="modal-title">Vali teenused</h4>
                     <button type="button" class="close" onclick="closeServiceModal()">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -192,7 +221,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="closeServiceModal()">Save</button>
+                    <button type="button" class="btn btn-primary" onclick="closeServiceModal()">Salvesta</button>
                 </div>
             </div>
         </div>
@@ -202,7 +231,7 @@
         <div class="modal-dialog modal-dialog-centered modal-md" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Select Pesubox</h4>
+                    <h4 class="modal-title">Vali töötaja</h4>
                     <button type="button" class="close" onclick="closePesuboxModal()">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -232,7 +261,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="closePesuboxModal()">Save</button>
+                    <button type="button" class="btn btn-primary" onclick="closePesuboxModal()">Salvesta</button>
                 </div>
             </div>
         </div>
@@ -258,7 +287,7 @@
             var service_id = [];
 
             if ($("#start_time").val() == "") {
-                return alert("Please select the time")
+                return alert("Palun vali teenuse algus")
             }
 
             // console.log(formdata.get("service_id"));
@@ -277,7 +306,7 @@
                 }
             })
             if (pesubox_id.length == 0) {
-                return alert("Please select the Pesubox")
+                return alert("Palun vali töötaja")
             }
             formdata.set("pesubox_id", pesubox_id)
             $.ajax({
@@ -295,7 +324,7 @@
                         if (res.message) {
                             alert(res.message);
                         } else {
-                            alert('Something is Wrong');
+                            alert('Midagi läks valesti');
                         }
                     }
                 },
@@ -305,7 +334,7 @@
             });
         })
 
-        $("#mark").change(function() {
+        /*$("#mark").change(function() {
             $.ajax({
                 type: "post",
                 url: appUrl + '/admin/getModel',
@@ -318,7 +347,7 @@
                     console.log(err);
                 }
             });
-        })
+        })*/
 
         $("#duration .item").click(function() {
             $("#duration").find(".selected").removeClass("selected");
